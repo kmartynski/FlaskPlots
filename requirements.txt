@@ -1,0 +1,6 @@
+# cat requirements.txt 
+matplotlib==3.0.2
+numpy==1.15.0
+scipy==1.0.0
+pandas==0.23.8
+Flask==1.0.2
