@@ -5,12 +5,13 @@ import numpy as np
 import io
 import base64
 import pandas as pd
+from objects import *
 
 app = Flask(__name__)
 
 @app.route('/')
 def starting_page():
-    return "Witaj w kreatorze wykresów"
+    return render_template("index.html")
 
 @app.route('/chart')
 def charts():
@@ -63,6 +64,16 @@ def column_charts():
 @app.route('/csv')
 def csv_table():
     return "Tutaj możesz wygenerować tabelę csv!"
+
+@app.route('/test')
+def test():
+    img = io.BytesIO()
+    p.line_chart()
+    plt.savefig(img, format='png')
+    img.seek(0)
+
+    plot_url = base64.b64encode(img.getvalue()).decode()
+    return '<img src="data:image/png;base64,{}">'.format(plot_url)
 
 if __name__ == "__main__":
     app.run(debug=True)
