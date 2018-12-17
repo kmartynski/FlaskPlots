@@ -4,9 +4,9 @@ import numpy as np
 import scipy as sc
 import pandas as pd
 
-app = (__name__)
+app = Flask(__name__)
 
-@route('/')
+@app.route('/')
 def starting_page():
   return "Witaj w kreatorze wykresów"
   
