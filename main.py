@@ -65,15 +65,5 @@ def column_charts():
 def csv_table():
     return "Tutaj możesz wygenerować tabelę csv!"
 
-@app.route('/test')
-def test():
-    img = io.BytesIO()
-    p.line_chart()
-    plt.savefig(img, format='png')
-    img.seek(0)
-
-    plot_url = base64.b64encode(img.getvalue()).decode()
-    return '<img src="data:image/png;base64,{}">'.format(plot_url)
-
 if __name__ == "__main__":
     app.run(debug=True)
