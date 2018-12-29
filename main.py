@@ -15,16 +15,35 @@ def starting_page():
 
 @app.route('/chart')
 def charts():
-    img = io.BytesIO()
-    x = np.linspace(1, 10)
-    y = np.linspace(60, 70)
-    plt.plot(x, y, color='blue')
-    plt.savefig(img, format='png')
-    img.seek(0)
+    if request.method == 'POST':
+        beginning_x = request.form['x1']
+        ending_x = request.form['x2']
+        beginning_y = request.form['y1']
+        ending_y = request.form['y2']
+        multiplier = request.form['Z']
 
-    plot_url = base64.b64encode(img.getvalue()).decode()
+        x = np.linspace(int(beginning_x), int(ending_x))
+        y = np.linspace(int(beginning_y), int(ending_y))
 
-    return '<img src="data:image/png;base64,{}">'.format(plot_url)
+        img = io.BytesIO()
+        if request.form.get('czerwony'):
+            curvecolor = 'red'
+        elif request.form.get('zielony'):
+            curvecolor = 'green'
+        elif request.form.get('blue'):
+            curvecolor = 'blue'
+        else:
+            curvecolor = 'black'
+
+        line_plot = Charts(x, y ** int(multiplier), curvecolor)
+        line_plot.line_chart()
+        plt.savefig(img, format='png')
+        img.seek(0)
+        plot_url = base64.b64encode(img.getvalue()).decode()
+
+        return '<img src="data:image/png;base64,{}">'.format(plot_url)
+    else:
+        return render_template('linechart.html')
 
 @app.route('/pie')
 def pie_charts():
