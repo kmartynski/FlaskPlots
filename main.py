@@ -45,17 +45,29 @@ def charts():
     else:
         return render_template('linechart.html')
 
-@app.route('/pie')
+@app.route('/pie', methods=['GET', 'POST'])
 def pie_charts():
-    img = io.BytesIO()
-    x = np.linspace(1, 10)
-    plt.pie(x)
-    plt.savefig(img, format='png')
-    img.seek(0)
+    if request.method == 'POST':
+        group1 = request.form['g1']
+        group2 = request.form['g2']
+        group3 = request.form['g3']
+        group4 = request.form['g4']
+        value1 = request.form['v1']
+        value2 = request.form['v2']
+        value3 = request.form['v3']
+        value4 = request.form['v4']
+        pie_pie = io.BytesIO()
+        pie_labels = [group1, group2, group3, group4]
+        sizes = [int(value1), int(value2), int(value3), int(value4)]
+        pie_plot = Charts(sizes, pie_labels)
+        pie_plot.pie_chart()
+        plt.savefig(pie_pie, format='png')
+        pie_pie.seek(0)
+        pie_plot_url = base64.b64encode(pie_pie.getvalue()).decode()
 
-    plot_url = base64.b64encode(img.getvalue()).decode()
-
-    return '<img src="data:image/png;base64,{}">'.format(plot_url)
+        return '<img src="data:pie_pie/png;base64,{}">'.format(pie_plot_url)
+    else:
+        return render_template('piechart.html')
 
 @app.route('/column')
 def column_charts():
