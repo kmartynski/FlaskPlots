@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Different Scientific Data Presentation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SciFlask</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="/chart">Line Chart</a></li>
+      <li><a href="/pie">Pie Chart</a></li>
+      <li><a href="/column">Column Chart</a></li>
+      <li><a href="/csv">CSV</a></li>
+    </ul>
+  </div>
+</nav>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <form action='/pie' method="POST">
+        <div>
+            Podaj nazwę pierwszej grupy: <input type="text" name="g1"><br>
+            Podaj nazwę drugiej grupy: <input type="text" name="g2"><br>
+            Podaj nazwę trzeciej grupy: <input type="text" name="g3"><br>
+            Podaj nazwę czwartej grupy: <input type="text" name="g4"><br>
+            Podaj wartość procentową dla pierwszej grupy: <input type="number" name="v1"><br>
+            Podaj wartość procentową dla drugiej grupy: <input type="number" name="v2"><br>
+            Podaj wartość procentową dla trzeciej grupy: <input type="number" name="v3"><br>
+            Podaj wartość procentową dla czwartej grupy: <input type="number" name="v4"><br>
+        </div>
+        <div>
+            <input type="submit" value="Submit"><br>
+        </div>
+  </form>
+</body>
+</html>
