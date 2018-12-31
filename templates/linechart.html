@@ -1,56 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Different Scientific Data Presentation</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{% extends 'base.html' %}
 
-</head>
-<body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">SciFlask</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home</a></li>
-      <li><a href="/chart">Line Chart</a></li>
-      <li><a href="/pie">Pie Chart</a></li>
-      <li><a href="/column">Column Chart</a></li>
-      <li><a href="/csv">CSV</a></li>
-    </ul>
-  </div>
-</nav>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% block content %}
   <form action='/chart' method="POST">
-        <div>
-            Podaj wartość początkową dla zakresu X: <input type="number" name="x1"><br>
-            Podaj wartość końcową dla zakresu X: <input type="number" name="x2"><br>
-            Podaj wartość początkową dla zakresu Y: <input type="number" name="y1"><br>
-            Podaj wartość końcową dla zakresu Y: <input type="number" name="y2"><br>
-            Podaj wartość przez jaką chcesz spotęgować przez Y: <input type="number" name="Z"><br>
+    <div>
+      Podaj wartość początkową dla zakresu X: <input type="number" name="x1" value="1"><br>
+      Podaj wartość końcową dla zakresu X: <input type="number" name="x2" value="50" ><br>
+      Podaj wartość początkową dla zakresu Y: <input type="number" name="y1" value="1" ><br>
+      Podaj wartość końcową dla zakresu Y: <input type="number" name="y2" value="50" ><br>
+      Podaj wartość przez jaką chcesz spotęgować przez Y: <input type="number" name="Z" value="1"><br>
 
-        </div>
-        <div>
-              <fieldset>
-                    <legend>Wybierz kolor krzywej</legend>
-                        <label>Czerwony
-                            <input type="radio" name="czerwony">
-                        </label><br>
-                        <label>Zielony
-                            <input type="radio" name="zielony">
-                        </label><br>
-                        <label>Niebieski
-                            <input type="radio" name="niebieski">
-                        </label><br>
-                        <label>Czarny
-                            <input type="radio" name="czarny">
-                        </label><br>
-                        <input type="submit" value="Submit"><br>
-              </fieldset>
-        </div>
+    </div>
+    <div>
+      <fieldset>
+        <legend>Wybierz kolor krzywej</legend>
+        <label>Czerwony
+          <input type="radio" name="color" value="red">
+        </label><br>
+        <label>Zielony
+          <input type="radio" name="color" value="green">
+        </label><br>
+        <label>Niebieski
+          <input type="radio" name="color" value="blue">
+        </label><br>
+        <label>Czarny
+          <input type="radio" name="color" value="black">
+        </label><br>
+        <input type="submit" value="Submit"><br>
+      </fieldset>
+    </div>
   </form>
-</body>
-</html>
+
+  {% if image %}
+    <img src="data:image/png;base64,{{ image }}">
+  {% endif %}
+
+
+{% endblock %}
