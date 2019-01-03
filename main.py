@@ -7,11 +7,9 @@ from objects import *
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def starting_page():
     return render_template("index.html")
-
 
 @app.route('/chart', methods=['GET', 'POST'])
 def charts():
@@ -63,7 +61,6 @@ def pie_charts():
         plt.close()
     return render_template('piechart.html', image=pie_plot_url)
 
-
 @app.route('/column')
 def column_charts():
     img = io.BytesIO()
@@ -86,15 +83,12 @@ def column_charts():
     plt.close()
     return render_template('columnchart.html', image=plot_url)
 
-
 @app.route('/csv')
 def csv_table():
     return render_template('csv.html', csv="Tutaj możesz wygenerować tabelę csv!")
 
-
 if __name__ == "__main__":
     app.run(debug=True)
-
 
 # other ways to create graphs:
 # https://blog.ruanbekker.com/blog/2017/12/14/graphing-pretty-charts-with-python-flask-and-chartjs/
