@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<a href="{{ url_for('home') }}">Return</a>
+
+<form action="" method="POST">
+    <div>
+        <label>Create your own square function: </label><br>
+        {{ form.hidden_tag() }}
+        {{ form.start_x.label }}{{ form.start_x( value=1) }}<br>
+        {{ form.end_x.label }}{{ form.end_x( value=10) }}<br>
+        {{ form.coeff_a.label }}{{ form.coeff_a( value=1) }}<br>
+        {{ form.coeff_b.label }}{{ form.coeff_b( value=2) }}<br>
+        {{ form.coeff_c.label }}{{ form.coeff_c( value=3) }}<br>
+        {{ form.color.label }}{{ form.color (value='black') }}<br>
+    </div>
+    {{ form.submit }}
+</form>
+
+{% if image %}
+    <img src="data:image/png;base64,{{ image }}">
+{% endif %}
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    Welcome to this simple plot creator maintained by Flask
+    <a href="{{ url_for('line') }}">Line</a>
+    <a href="{{ url_for('pie') }}">Pie</a>
+    <a href="{{ url_for('column') }}">Column</a>
+{% endblock %}

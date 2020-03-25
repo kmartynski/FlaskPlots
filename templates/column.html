@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+Columns
+<a href="{{ url_for('home') }}">Return</a>
+
+<form action="" method="POST">
+    <div>
+        <br>
+        {{ column_form.hidden_tag() }}
+        {{ column_form.number_of_rows.label }} {{ column_form.number_of_rows(placeholer=2) }}<br>
+        {{ column_form.submit }}
+    </div>
+    <div>
+        {% if column_form.number_of_rows.data is not none %}
+            {% for i in range(column_form.number_of_rows.data) %}
+                Label name: <input type="text" name="l{{ i }}" placeholder="Insert name">
+                Value: <input type="number" name="v{{ i }}" placeholder="Value"><br>
+            {% endfor %}
+            {{ column_form.draw }}
+        {% endif %}
+    </div>
+</form>
+{% if image %}
+    <img src="data:image/png;base64,{{ image }}">
+{% endif %}
+{% endblock %}

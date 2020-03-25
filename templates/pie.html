@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+Pie
+<a href="{{ url_for('home') }}">Return</a>
+
+<form action="" method="POST">
+    <div>
+        <br>
+        {{ pie_form.hidden_tag() }}
+        {{ pie_form.number_of_rows.label }} {{ pie_form.number_of_rows(placeholer=2) }}<br>
+        {{ pie_form.submit }}
+    </div>
+    <div>
+        {% if pie_form.number_of_rows.data is not none %}
+            {% for i in range(pie_form.number_of_rows.data) %}
+                Group name: <input type="text" name="g{{ i }}" placeholder="Insert name">
+                Value: <input type="number" name="v{{ i }}" placeholder="%"><br>
+            {% endfor %}
+            {{ pie_form.draw }}
+        {% endif %}
+    </div>
+</form>
+{% if message %}
+    {{ message }}
+{% endif %}
+
+{% if image %}
+    <img src="data:image/png;base64,{{ image }}">
+{% endif %}
+{% endblock %}
