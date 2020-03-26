@@ -6,7 +6,7 @@ import base64
 import matplotlib.pyplot as plt
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '318ee30ce031eb7c55b87d034fb36765'
+app.config['SECRET_KEY'] = SECRET_KEY
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
