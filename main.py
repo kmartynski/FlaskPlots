@@ -95,4 +95,4 @@ def column():
     return render_template('column.html', image=column_plot_url, column_form=column_form)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
