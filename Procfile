@@ -1,1 +1,1 @@
-web: gunicorn FlaskPlots.main:app
+web: gunicorn main:app
