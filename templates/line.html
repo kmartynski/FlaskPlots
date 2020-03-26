@@ -19,5 +19,6 @@
 
 {% if image %}
     <img src="data:image/png;base64,{{ image }}">
+    <a href="data:image/png;base64,{{ image }}" download="line"><i class="fas fa-file fa-2x"></i></a>
 {% endif %}
 {% endblock %}
