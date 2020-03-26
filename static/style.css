@@ -1,0 +1,92 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+
+}
+
+@media screen and (min-width: 1200px) {
+    .main-page-sizes {
+        padding: 5em 5em;
+        margin: 2em 5em;
+        font-size: 3em;
+        border-radius: 10%;
+    }
+    .plot-page {
+        padding: 3% 2%;
+        margin: 3% 20%;
+        font-size: 1.8em;
+        border-radius: 10%;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .main-page-sizes {
+        height: 100vh;
+        font-size: 3em;
+        padding-top: 80%;
+    }
+    .plot-page {
+        height: 100vh;
+        font-size: 2em;
+        padding-top: 40%;
+    }
+}
+
+.main-page {
+    text-align: center;
+    background: rgba(147,206,222,1);
+    background: -moz-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(147,206,222,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
+    background: -webkit-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: -o-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: -ms-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: linear-gradient(to right, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1 );
+}
+
+
+i {
+    color: black;
+    padding: 2% 2%;
+    font-weight: lighter;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+i:hover {
+    color: #aaaaaa;
+    transition: .4s;
+}
+
+input[type=text], input[type=submit]{
+    width:10%;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+}
+
+input[type=text]:focus, input[type=submit]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+.submit-button {
+    cursor:pointer;
+}
+
+.submit-button:hover {
+    border-color: dodgerBlue;
+    transition: .4s;
+}

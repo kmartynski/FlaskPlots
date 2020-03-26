@@ -1,8 +1,10 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    Welcome to this simple plot creator maintained by Flask
+<div class="main-page main-page-sizes">
+    Welcome to this simple plot creator maintained by Flask<hr>
     <a href="{{ url_for('line') }}"><i class="fas fa-chart-line"></i></a>
     <a href="{{ url_for('pie') }}"><i class="fas fa-chart-pie"></i></a>
     <a href="{{ url_for('column') }}"><i class="fas fa-chart-bar"></i></a>
+</div>
 {% endblock %}
