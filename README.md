@@ -8,6 +8,14 @@ It is a project for presentation basic plotting functions with using ```matplotl
 
 It is highly recommended to use, ```requirements.txt``` file to get all necessary modules.
 
+The main functionality of this app is presented below:
+One might generate three types of plots:
+
+### Line plot
+
+![Image description](https://github.com/kmartynski/FlaskPlots/blob/master/PlotExamples/column.png)
+
+
 
 
 ## Technologies used
