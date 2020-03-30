@@ -12,9 +12,15 @@ The main functionality of this app is presented below:
 One might generate three types of plots:
 
 ### Line plot
+![Image description](https://github.com/kmartynski/FlaskPlots/blob/master/PlotExamples/line.png)
 
+
+### Pie plot
+![Image description](https://github.com/kmartynski/FlaskPlots/blob/master/PlotExamples/pie.png)
+
+
+### Column plot
 ![Image description](https://github.com/kmartynski/FlaskPlots/blob/master/PlotExamples/column.png)
-
 
 
 
