@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="main-page plot-page">
+<div class="main-page plot-page-pie-column">
     <form action="" method="POST">
         <div>
             <br>
@@ -12,6 +12,7 @@
         </div>
         <div>
             {% if column_form.number_of_rows.data is not none %}
+                Plot title: <input type="text" name="title" placeholder="Insert title"><br>
                 {% for i in range(column_form.number_of_rows.data) %}
                     Label name: <input type="text" name="l{{ i }}" placeholder="Insert name">
                     Value: <input type="number" name="v{{ i }}" placeholder="Value"><br>

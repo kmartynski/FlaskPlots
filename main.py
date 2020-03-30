@@ -6,7 +6,7 @@ import base64
 import matplotlib.pyplot as plt
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = SECRET_KEY
+app.config['SECRET_KEY'] = '7cdb12514c95564fe7c594b7f39a9c8f'
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -46,6 +46,7 @@ def pie():
             for i in range(pie_form.number_of_rows.data):
                 group = request.form[f'g{i}']
                 value = request.form[f'v{i}']
+                title = request.form['title']
                 pie_labels.append(group)
                 sizes.append(int(value))
             if sum(sizes) > 100:
@@ -56,7 +57,7 @@ def pie():
                 return render_template('pie.html', pie_form=pie_form, message=message)
             else:
                 img = io.BytesIO()
-                plt.title("Pie chart for: ")
+                plt.title(f"{title}: ")
                 plt.pie(sizes, labels=pie_labels, autopct='%1.1f%%', startangle=90, shadow=True)
                 plt.savefig(img, format='png')
                 img.seek(0)
@@ -81,12 +82,13 @@ def column():
                 column_labels.append(label)
                 values.append(int(value))
             img = io.BytesIO()
-            plt.title("Column chart for: ")
+            title = request.form['title']
+            plt.title(f"{title}: ")
             x = np.arange(column_form.number_of_rows.data)
             plt.bar(x, values)
             plt.xticks(x, tuple(column_labels))
-            plt.xlabel('Labels')
-            plt.ylabel('y data')
+            plt.xlabel('Data bins')
+            plt.ylabel('Number of data')
             plt.savefig(img, format='png')
             img.seek(0)
             column_plot_url = base64.b64encode(img.getvalue()).decode()

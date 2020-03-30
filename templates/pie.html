@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div class="main-page plot-page">
+<div class="main-page plot-page-pie-column">
     <form action="" method="POST">
         <div>
             <br>
@@ -11,6 +11,7 @@
         </div>
         <div>
             {% if pie_form.number_of_rows.data is not none %}
+                Plot title: <input type="text" name="title" placeholder="Insert title"><br>
                 {% for i in range(pie_form.number_of_rows.data) %}
                     Group name: <input type="text" name="g{{ i }}" placeholder="Insert name">
                     Value: <input type="number" name="v{{ i }}" placeholder="%"><br>

@@ -7,16 +7,21 @@ body, html {
 
 @media screen and (min-width: 1200px) {
     .main-page-sizes {
-        padding: 5em 5em;
+        padding: 4em 5em;
         margin: 2em 5em;
         font-size: 3em;
         border-radius: 10%;
     }
     .plot-page {
-        padding: 3% 2%;
-        margin: 3% 20%;
+        padding: 5% 2%;
+        margin: 0 20%;
         font-size: 1.8em;
-        border-radius: 10%;
+    }
+
+    .plot-page-pie-column {
+        padding: 15% 2%;
+        margin: 5% 20%;
+        font-size: 1.8em;
     }
 }
 
@@ -27,6 +32,12 @@ body, html {
         padding-top: 80%;
     }
     .plot-page {
+        height: 100vh;
+        font-size: 2em;
+        padding-top: 40%;
+    }
+
+    .plot-page-pie-column {
         height: 100vh;
         font-size: 2em;
         padding-top: 40%;
