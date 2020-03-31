@@ -11,6 +11,10 @@ It is highly recommended to use, ```requirements.txt``` file to get all necessar
 The main functionality of this app is presented below:
 One might generate three types of plots:
 
+### App deployment
+
+The app was deployed on Heroku: https://flaskplots.herokuapp.com/
+
 ### Line plot
 ![Image description](https://github.com/kmartynski/FlaskPlots/blob/master/PlotExamples/line.png)
 
