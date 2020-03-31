@@ -1,7 +1,17 @@
 # cat requirements.txt 
+click==7.1.1
+cycler==0.10.0
+Flask==1.1.1
+Flask-WTF==0.14.3
+gunicorn==20.0.4
+itsdangerous==1.1.0
+Jinja2==2.10.1
+kiwisolver==1.1.0
+MarkupSafe==1.1.1
 matplotlib==3.1.0
 numpy==1.16.4
-Flask==1.1.1
-Jinja2==2.10.1
+pyparsing==2.4.6
+python-dateutil==2.8.1
+six==1.14.0
+Werkzeug==1.0.1
 WTForms==2.2.1
-gunicorn==20.0.4
