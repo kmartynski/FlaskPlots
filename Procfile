@@ -1,1 +1,1 @@
-web gunicorn FlaskPlots.wsgi
+web gunicorn main:app
