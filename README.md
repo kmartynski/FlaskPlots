@@ -19,8 +19,10 @@ The app was deployed on Heroku: https://flaskplots.herokuapp.com/
 ![Image description](https://github.com/kmartynski/FlaskPlots/blob/master/PlotExamples/line.png)
 
 
+
 ### Pie plot
 ![Image description](https://github.com/kmartynski/FlaskPlots/blob/master/PlotExamples/pie.png)
+
 
 
 ### Column plot
